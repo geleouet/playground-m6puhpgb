@@ -6,3 +6,8 @@ Ce playground présente différentes questions qui peuvent être posées en entr
 
 
 
+
+
+# WhoAmI
+Développeur depuis de nombreuses années, actuellement consultant et animateur Meritis.
+Je m’intéresse particulièrement à tout ce qui a trait à l’écosystème Java, à l’intelligence artificielle et aux pratiques de développement.
