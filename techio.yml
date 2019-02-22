@@ -2,10 +2,10 @@ title : Questions d'entretiens
 
 # Table of content
 plan:
-  - title: Welcome # Set the page title (only displayed if your contribution has several pages)
+  - title: Bienvenue
     statement: markdowns/welcome.md # Set the file path to the page content
-#  - title: Another Page
-#    statement: markdowns/another-page.md
+  - title: SQL
+    statement: markdowns/exercice-sql.md
 
 
 # Settings for your programming projects and the associated Docker images
