@@ -74,17 +74,31 @@ public class H2Test {
 
 		ResultQuery rq = executeQuery(conn, request);
 		System.out.println(format(rq));
-
-		Assert.assertEquals("First column should be named 'name'", "name", rq.columns[0].name.toLowerCase());
-		Assert.assertEquals("Second column should be named 'total'", "total", rq.columns[1].name.toLowerCase());
-		Assert.assertEquals("Names should be sorted", "A", rq.columns[0].values.get(0));
-		Assert.assertEquals("Names should be sorted", "B", rq.columns[0].values.get(1));
-		Assert.assertEquals("Value for B should be '14'", "14", rq.columns[1].values.get(1));
-		Assert.assertEquals("Value for D should be displayed", "D", rq.columns[0].values.get(3));
-		Assert.assertEquals("Value for D should be '0'", "0", rq.columns[1].values.get(3));
-		
-		
 		conn.close();
+
+		try {
+			Assert.assertEquals("First column should be named 'name'", "name", rq.columns[0].name.toLowerCase());
+			Assert.assertEquals("Second column should be named 'total'", "total", rq.columns[1].name.toLowerCase());
+			Assert.assertEquals("Names should be sorted", "A", rq.columns[0].values.get(0));
+			Assert.assertEquals("Names should be sorted", "B", rq.columns[0].values.get(1));
+			Assert.assertEquals("Value for B should be '14'", "14", rq.columns[1].values.get(1));
+			Assert.assertEquals("Value for D should be displayed", "D", rq.columns[0].values.get(3));
+			Assert.assertEquals("Value for D should be '0'", "0", rq.columns[1].values.get(3));
+		} catch (AssertionError ae) {
+			success(false);
+			msg("Oops! 🐞", ae.getMessage());
+			msg("Hint 💡", "Did you properly accumulate all stars into 'totalStars'? 🤔");
+		}
+		
+	}
+	
+	
+	private static void msg(String channel, String msg) {
+		System.out.println(String.format("TECHIO> message --channel \"%s\" \"%s\"", channel, msg));
+	}
+
+	private static void success(boolean success) {
+		System.out.println(String.format("TECHIO> success %s", success));
 	}
 
 	private StringBuilder format(ResultQuery rq) {
