@@ -73,7 +73,7 @@ public class H2Test {
 		String request = readInput(fileName);
 
 		ResultQuery rq = executeQuery(conn, request);
-		System.out.println(format(rq));
+		msg("SQL", format(rq));
 		conn.close();
 
 		try {
@@ -87,7 +87,6 @@ public class H2Test {
 		} catch (AssertionError ae) {
 			success(false);
 			msg("Oops! 🐞", ae.getMessage());
-			msg("Hint 💡", "Did you properly accumulate all stars into 'totalStars'? 🤔");
 		}
 		
 	}
@@ -101,7 +100,7 @@ public class H2Test {
 		System.out.println(String.format("TECHIO> success %s", success));
 	}
 
-	private StringBuilder format(ResultQuery rq) {
+	private String format(ResultQuery rq) {
 		int columnCount = rq.columnCount;
 		ColumnRes[] columns = rq.columns;
 		StringBuilder header = new StringBuilder();
@@ -130,7 +129,7 @@ public class H2Test {
 			}
 			out.append("\n");
 		}
-		return out;
+		return out.toString();
 	}
 
 	private ResultQuery executeQuery(Connection conn, String request) throws SQLException {
