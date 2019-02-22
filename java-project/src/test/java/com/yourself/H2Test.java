@@ -12,6 +12,7 @@ import java.sql.SQLException;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -92,8 +93,10 @@ public class H2Test {
 	}
 	
 	
-	private static void msg(String channel, String msg) {
-		System.out.println(String.format("TECHIO> message --channel \"%s\" \"%s\"", channel, msg));
+	private static void msg(String channel, String msgs) {
+		Arrays.stream(msgs.split("\n")).forEach(msg -> 
+			System.out.println(String.format("TECHIO> message --channel \"%s\" \"%s\"", channel, msg))
+		);
 	}
 
 	private static void success(boolean success) {
