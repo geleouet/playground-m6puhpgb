@@ -2,9 +2,10 @@
 You have the following tables provided
 
 DEAL
--------------
-|DEALID |NAME |
-|-------|-----|
+
+
+| DEALID |NAME |
+| ------- | ----- |
 |1      |A    |
 |2      |B    |
 |3      |C    |
