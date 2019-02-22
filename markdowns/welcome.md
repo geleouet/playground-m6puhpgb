@@ -2,19 +2,20 @@
 You have the following tables provided
 
 DEAL
+--------------
 
-
-| DEALID |NAME |
-| ------- | ----- |
-|1      |A    |
-|2      |B    |
-|3      |C    |
-|4      |D    |
-|5      |E    |
-|6      |F    |
+DEALID |NAME 
+-------|-----
+1      |A    
+2      |B    
+3      |C    
+4      |D    
+5      |E    
+6      |F 
 
 PRICE
 --------------
+
 DEALID |PRICE 
 -------|------
 1      |0,3   
