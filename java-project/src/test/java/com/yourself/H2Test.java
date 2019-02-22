@@ -59,7 +59,6 @@ public class H2Test {
 	@Test
 	public void test() throws Exception {
 		String fileName = "universe.sql";
-		System.out.println("TECHIO> redirect-streams out null");
 
 //		-- SQL
 //		SELECT NAME, isnull(sum(Price), 0) as TOTAL FROM DEAL
